@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
-            button2 = new Button();
+            btnConnectServer = new Button();
+            btnDisconnectServer = new Button();
             label1 = new Label();
             labelClintList = new Label();
             label3 = new Label();
@@ -39,35 +39,38 @@
             checkBox1 = new CheckBox();
             label6 = new Label();
             textBox2 = new TextBox();
-            button3 = new Button();
+            btnSendMsg = new Button();
             SuspendLayout();
             // 
-            // button1
+            // btnConnectServer
             // 
-            button1.Location = new Point(12, 12);
-            button1.Name = "button1";
-            button1.Size = new Size(370, 40);
-            button1.TabIndex = 0;
-            button1.Text = "연결 대기";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += BtnAcceptIncoming_Click;
+            btnConnectServer.Location = new Point(9, 9);
+            btnConnectServer.Margin = new Padding(2);
+            btnConnectServer.Name = "btnConnectServer";
+            btnConnectServer.Size = new Size(288, 30);
+            btnConnectServer.TabIndex = 0;
+            btnConnectServer.Text = "연결 대기";
+            btnConnectServer.UseVisualStyleBackColor = true;
+            btnConnectServer.Click += BtnAcceptIncoming_Click;
             // 
-            // button2
+            // btnDisconnectServer
             // 
-            button2.Location = new Point(400, 12);
-            button2.Name = "button2";
-            button2.Size = new Size(370, 40);
-            button2.TabIndex = 1;
-            button2.Text = "프로그램 종료";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += BtnDisconnectServer_Click;
+            btnDisconnectServer.Location = new Point(311, 9);
+            btnDisconnectServer.Margin = new Padding(2);
+            btnDisconnectServer.Name = "btnDisconnectServer";
+            btnDisconnectServer.Size = new Size(288, 30);
+            btnDisconnectServer.TabIndex = 1;
+            btnDisconnectServer.Text = "서버 종료";
+            btnDisconnectServer.UseVisualStyleBackColor = true;
+            btnDisconnectServer.Click += BtnDisconnectServer_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(12, 73);
+            label1.Location = new Point(9, 55);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(134, 20);
+            label1.Size = new Size(107, 15);
             label1.TabIndex = 2;
             label1.Text = "클라이언트 리스트";
             // 
@@ -75,17 +78,19 @@
             // 
             labelClintList.BackColor = SystemColors.ButtonHighlight;
             labelClintList.BorderStyle = BorderStyle.FixedSingle;
-            labelClintList.Location = new Point(12, 107);
+            labelClintList.Location = new Point(9, 80);
+            labelClintList.Margin = new Padding(2, 0, 2, 0);
             labelClintList.Name = "labelClintList";
-            labelClintList.Size = new Size(256, 439);
+            labelClintList.Size = new Size(200, 330);
             labelClintList.TabIndex = 3;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(289, 73);
+            label3.Location = new Point(225, 55);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(74, 20);
+            label3.Size = new Size(59, 15);
             label3.TabIndex = 4;
             label3.Text = "채팅 로그";
             // 
@@ -93,35 +98,39 @@
             // 
             labelChatLog.BackColor = SystemColors.ButtonHighlight;
             labelChatLog.BorderStyle = BorderStyle.FixedSingle;
-            labelChatLog.Location = new Point(289, 107);
+            labelChatLog.Location = new Point(225, 80);
+            labelChatLog.Margin = new Padding(2, 0, 2, 0);
             labelChatLog.Name = "labelChatLog";
-            labelChatLog.Size = new Size(481, 439);
+            labelChatLog.Size = new Size(375, 330);
             labelChatLog.TabIndex = 5;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(12, 560);
+            label5.Location = new Point(9, 420);
+            label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
-            label5.Size = new Size(184, 20);
+            label5.Size = new Size(147, 15);
             label5.TabIndex = 6;
             label5.Text = "클라이언트에 메세지 전송";
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(12, 583);
+            textBox1.Location = new Point(9, 437);
+            textBox1.Margin = new Padding(2);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(758, 93);
+            textBox1.Size = new Size(590, 71);
             textBox1.TabIndex = 7;
             textBox1.TextAlign = HorizontalAlignment.Right;
             // 
             // checkBox1
             // 
             checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(12, 682);
+            checkBox1.Location = new Point(9, 512);
+            checkBox1.Margin = new Padding(2);
             checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(111, 24);
+            checkBox1.Size = new Size(90, 19);
             checkBox1.TabIndex = 8;
             checkBox1.Text = "모든 사용자";
             checkBox1.UseVisualStyleBackColor = true;
@@ -129,35 +138,38 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(160, 686);
+            label6.Location = new Point(124, 514);
+            label6.Margin = new Padding(2, 0, 2, 0);
             label6.Name = "label6";
-            label6.Size = new Size(35, 20);
+            label6.Size = new Size(28, 15);
             label6.TabIndex = 9;
             label6.Text = "IP : ";
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(201, 682);
+            textBox2.Location = new Point(156, 512);
+            textBox2.Margin = new Padding(2);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(391, 27);
+            textBox2.Size = new Size(305, 23);
             textBox2.TabIndex = 10;
             textBox2.TextAlign = HorizontalAlignment.Right;
             // 
-            // button3
+            // btnSendMsg
             // 
-            button3.Location = new Point(620, 682);
-            button3.Name = "button3";
-            button3.Size = new Size(150, 27);
-            button3.TabIndex = 11;
-            button3.Text = "전송";
-            button3.UseVisualStyleBackColor = true;
+            btnSendMsg.Location = new Point(482, 512);
+            btnSendMsg.Margin = new Padding(2);
+            btnSendMsg.Name = "btnSendMsg";
+            btnSendMsg.Size = new Size(117, 23);
+            btnSendMsg.TabIndex = 11;
+            btnSendMsg.Text = "전송";
+            btnSendMsg.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(9F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(782, 753);
-            Controls.Add(button3);
+            ClientSize = new Size(608, 565);
+            Controls.Add(btnSendMsg);
             Controls.Add(textBox2);
             Controls.Add(label6);
             Controls.Add(checkBox1);
@@ -167,8 +179,9 @@
             Controls.Add(label3);
             Controls.Add(labelClintList);
             Controls.Add(label1);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btnDisconnectServer);
+            Controls.Add(btnConnectServer);
+            Margin = new Padding(2);
             Name = "Form1";
             Text = "Form1";
             ResumeLayout(false);
@@ -177,8 +190,8 @@
 
         #endregion
 
-        private Button button1;
-        private Button button2;
+        private Button btnConnectServer;
+        private Button btnDisconnectServer;
         private Label label1;
         private Label labelClintList;
         private Label label3;
@@ -188,6 +201,6 @@
         private CheckBox checkBox1;
         private Label label6;
         private TextBox textBox2;
-        private Button button3;
+        private Button btnSendMsg;
     }
 }

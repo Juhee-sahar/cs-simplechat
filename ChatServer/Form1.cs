@@ -16,12 +16,18 @@ namespace ChatServer
             // 이벤트 연결
             mServer.ClientConnected += OnClientConnected;
             mServer.ClientDisconnected += OnClientDisconnected;
+            mServer.MessageReceived += OnMessageReceived;
+
+            // 초기 UI
+            UpdateUiConnectedState(false);
         }
+
 
 
         // 연결 대기 버튼 클릭
         private async void BtnAcceptIncoming_Click(object sender, System.EventArgs e)
         {
+            UpdateUiConnectedState(true);
 
             await mServer.StartServerListeningAsync();
         }
@@ -31,6 +37,7 @@ namespace ChatServer
         {
             mServer.StopServer();
             AppendChatLog("서버 중지됨.");
+            UpdateUiConnectedState(false);
         }
 
 
@@ -64,6 +71,19 @@ namespace ChatServer
         private void AppendChatLog(string text)
         {
             labelChatLog.Text += text + Environment.NewLine;    
+        }
+
+
+        private void OnMessageReceived(string ip, string text)
+        {
+            labelChatLog.Text += $"[{ip}] {text}" + Environment.NewLine;
+        }
+
+        public void UpdateUiConnectedState(bool connected)
+        {
+            btnConnectServer.Enabled = !connected;
+            btnDisconnectServer.Enabled = connected;
+            btnSendMsg.Enabled = connected;    
         }
     }
 }
