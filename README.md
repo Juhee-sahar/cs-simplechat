@@ -1,2 +1,17 @@
-# cs-simplechat
-C# 간단한 서버-클라이언트 구조 채팅 예제
+# 간단한 채팅 프로그램 (server - client 구조)
+
+<br>
+
+<!-- ![화면이미지](imgs/screen01.png) -->
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
