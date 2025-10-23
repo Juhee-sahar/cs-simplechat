@@ -2,7 +2,7 @@
 
 <br>
 
-<!-- ![화면이미지](imgs/screen01.png) -->
+![화면이미지](imgs/screen01.png)
 
 
 <br>
